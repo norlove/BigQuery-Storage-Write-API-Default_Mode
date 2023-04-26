@@ -2,7 +2,7 @@
 
 This repo contains instructions and a code example of streaming data into BigQuery using the Storage Write API's default mode
 
-Please refer and copy the files from the write-api-default-example folder.
+Please refer and copy the files from the write-api-default-example folder to your dev environment.
 
 
 To get started, we’ll first create a table named “customer_records” through the below DDL statement. The DDL also partitions the table by Customer_Enrollment_Date and clusters the table by customer_ID.
