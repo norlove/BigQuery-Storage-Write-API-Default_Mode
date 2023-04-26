@@ -1,6 +1,8 @@
 # BigQuery-Storage-Write-API-Default_Mode
 
-This repo contains instructions and a code example of streaming data into BigQuery using the Storage Write API's default mode
+This repo contains instructions and a code example of streaming data into BigQuery using the Storage Write API's default mode.
+
+Documentation on how to use the Storage Write API can be found [HERE](https://cloud.google.com/bigquery/docs/write-api).
 
 Please refer and copy the files from the write-api-default-example folder to your dev environment.
 
