@@ -116,4 +116,4 @@ if __name__ == "__main__":
  
     with open('new_customers.json', 'r') as json_file:
         data = json.load(json_file)
-    BigQueryStorageWriteAppend.append_rows_proto2("nickorlove-demos","Test_Tables", "Customer_Records",data=data) # Change this to your specific BigQuery project, dataset, table details
+    BigQueryStorageWriteAppend.append_rows_proto2("<supply_your_project_id_here>","Test_Tables", "Customer_Records",data=data) # Change this to your specific BigQuery project, dataset, table details
