@@ -41,3 +41,6 @@ Within your developer environment, use this sample default_stream_python_script.
   ```
 
 We can now query our table and see it has ingested a few rows from the Storage Write API.
+  ```
+  SELECT * FROM `Test_Tables.Customer_Records`
+  ```
