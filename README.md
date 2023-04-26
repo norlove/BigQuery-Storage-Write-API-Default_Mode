@@ -5,7 +5,7 @@ This repo contains instructions and a code example of streaming data into BigQue
 Please refer and copy the files from the write-api-default-example folder to your dev environment.
 
 
-To get started, we’ll first create a table named “customer_records” through the below DDL statement. The DDL also partitions the table by Customer_Enrollment_Date and clusters the table by customer_ID.
+To get started, we’ll first create a table in BigQuery named “customer_records” through the below DDL statement. The DDL also partitions the table by Customer_Enrollment_Date and clusters the table by customer_ID.
   ```
   #Replace Test_Tables with your preferred dataset name
   CREATE TABLE `Test_Tables.Customer_Records` (
@@ -20,6 +20,7 @@ To get started, we’ll first create a table named “customer_records” throug
   CLUSTER BY
    Customer_ID
   ```
+
 Now, we’ll ingest some data via the Storage Write API. In this example, we’ll use Python, so we’ll stream data as protocol buffers. For a quick refresher on working with protocol buffers, [here’s a great tutorial](https://developers.google.com/protocol-buffers/docs/pythontutorial). 
 
 Using Python, we’ll first align our protobuf messages to the table we created using a .proto file in proto2 format. Use the sample_data.proto file from the write-api-default-example folder you downloaded to your developer environment, then run the following command within to update your protocol buffer definition:
@@ -29,7 +30,7 @@ Using Python, we’ll first align our protobuf messages to the table we created 
 
 Within your developer environment, use this sample default_stream_python_script.py Python script to insert some new example customer records by reading from the new_customers.json file and writing into the customer_records table. This code uses the BigQuery Storage Write API to stream a batch of row data by appending proto2 serialized bytes to the serialzed_rows repeated field like the example below:
   ```
-  row = cdc_sample_data_pb2.SampleData()
+  row = sample_data_pb2.SampleData()
       row.Customer_ID = 1
       row.Customer_Enrollment_Date = “2022-11-05”
       row.Customer_Name = "Nick"
